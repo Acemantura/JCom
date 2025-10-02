@@ -3,30 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Gaming Community</title>
+  <title>Joint Command</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-900 text-white">
 
   <!-- Hero -->
-  <section class="flex flex-col items-center justify-center text-center py-20 bg-gradient-to-b from-purple-800 to-gray-900">
-    <h1 class="text-5xl font-extrabold mb-6">🎮 Welcome to [Your Community Name]</h1>
+  <section class="flex flex-col items-center justify-center text-center pt-20 pb-4 bg-gradient-to-b from-purple-800 to-gray-900">
+    <h1 class="text-5xl font-extrabold mb-6">Joint Command</h1>
     <p class="text-lg text-gray-300 max-w-xl mb-6">
-      We’re a group of gamers who love [Game Titles]. Join us for streams,
-      events, and epic wins!
+      We’re a group of gamers who love Squad, and other teamwork games. Join us for wholesomeness, teamwork, and epic wins!
     </p>
-    <a href="https://discord.com/invite/p3ARRrZkhz" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-lg px-6 py-3 rounded-2xl">
-      Join Our Discord
-    </a>
+    <!-- Buttons stack on mobile, side-by-side on larger screens with hover + icons -->
+    <div class="flex flex-col sm:flex-row gap-4">
+      <!-- Discord -->
+      <a href="https://discord.com/invite/p3ARRrZkhz" target="_blank"
+         class="bg-purple-600 hover:bg-purple-700 text-lg px-6 py-3 rounded-2xl flex items-center justify-center gap-2
+                transition-transform transform hover:scale-105 duration-300">
+        <!-- Mobile icon -->
+        <svg class="w-5 h-5 sm:hidden" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.0371 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.372.2924a.077.077 0 01-.0065.1276c-.599.343-.2205.6449-1.873.8925a.0766.0766 0 00-.0416.1057c.3529.6989.7644 1.3637 1.226 1.9942a.076.076 0 00.0842.0276c1.9519-.6067 3.9403-1.5219 5.9931-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.028"/>
+        </svg>
+        <span class="hidden sm:inline">Join Our Discord</span>
+      </a>
+
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/@TeamJCom" target="_blank"
+         class="bg-red-600 hover:bg-red-700 text-lg px-6 py-3 rounded-2xl flex items-center justify-center gap-2
+                transition-transform transform hover:scale-105 duration-300">
+        <!-- Mobile icon -->
+        <svg class="w-5 h-5 sm:hidden" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M19.615 3.184c-.684-.257-3.422-.336-7.615-.336s-6.931.079-7.615.336C3.069 3.441 2.5 4.185 2.5 5.347v13.306c0 1.162.569 1.906 1.885 2.163.684.257 3.422.336 7.615.336s6.931-.079 7.615-.336c1.316-.257 1.885-1.001 1.885-2.163V5.347c0-1.162-.569-1.906-1.885-2.163zm-11.115 3.631v7.37l6.4-3.685-6.4-3.685z"/>
+        </svg>
+        <span class="hidden sm:inline">Our YouTube</span>
+      </a>
+    </div>
   </section>
 
   <!-- About -->
-  <section class="py-16 px-6 max-w-4xl mx-auto">
+  <section class="pt-4 pb-16 px-6 max-w-4xl mx-auto">
     <h2 class="text-3xl font-bold mb-4">About Us</h2>
     <p class="text-gray-300">
-      Our community started in [year] and has grown into a place for gamers
+      Our community started in 2010 and has grown into a place for gamers
       to connect, squad up, and share their favorite moments. We mostly play
-      [list games here], but we’re always exploring new titles.
+      Squad, but we’re always exploring different teamworking and crew games.  
+      Join our discord and subscribe to the various ping roles for FPS, Parlor, and Simulator games.
     </p>
   </section>
 
@@ -34,28 +55,30 @@
   <section class="py-16 px-6 bg-gray-800">
     <h2 class="text-3xl font-bold mb-8 text-center">Gameplay Highlights</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-      <!-- YouTube Embed -->
+      <!-- Responsive YouTube Embed -->
       <div class="rounded-xl overflow-hidden shadow-lg">
-        <iframe
-          width="100%"
-          height="315"
-          src="https://www.youtube.com/embed/NIEBHSgt15M"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+        <div class="relative" style="padding-top:56.25%;">
+          <iframe
+            class="absolute top-0 left-0 w-full h-full"
+            src="https://www.youtube.com/embed/NIEBHSgt15M"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
-	  <div class="rounded-xl overflow-hidden shadow-lg">
-        <iframe
-          width="100%"
-          height="315"
-          src="https://www.youtube.com/embed/2buJ0Tir9BI"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+      <div class="rounded-xl overflow-hidden shadow-lg">
+        <div class="relative" style="padding-top:56.25%;">
+          <iframe
+            class="absolute top-0 left-0 w-full h-full"
+            src="https://www.youtube.com/embed/2buJ0Tir9BI"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
     </div>
   </section>
@@ -64,14 +87,20 @@
   <section class="py-16 px-6 text-center">
     <h2 class="text-3xl font-bold mb-6">Connect With Us</h2>
     <div class="flex justify-center gap-6">
-      <a href="YOUR_DISCORD_INVITE" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg">Discord</a>
-      <a href="YOUR_YOUTUBE_LINK" target="_blank" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg">YouTube</a>
+      <a href="https://discord.com/invite/p3ARRrZkhz" target="_blank"
+         class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition-transform transform hover:scale-105 duration-300">
+        Discord
+      </a>
+      <a href="https://www.youtube.com/@TeamJCom" target="_blank"
+         class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg transition-transform transform hover:scale-105 duration-300">
+        YouTube
+      </a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="py-8 text-center bg-gray-950 text-gray-400 text-sm">
-    © <script>document.write(new Date().getFullYear())</script> [Your Community Name]. All rights reserved.
+    © <script>document.write(new Date().getFullYear())</script> Joint Command. All rights reserved.
   </footer>
 
 </body>
