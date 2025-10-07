@@ -2,15 +2,14 @@ name: Update Whitelist
 
 on:
   schedule:
-    - cron: "*/5 * * * *"  # every 4 hours
-  workflow_dispatch:
+    - cron: "0 */4 * * *"  # every 4 hours
+  workflow_dispatch:       # allows manual trigger from Actions tab
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     permissions:
-      contents: write  # 👈 ensures the job can push
+      contents: write  # ✅ allows push to the repo
 
     steps:
       - name: Checkout repository
@@ -28,10 +27,16 @@ jobs:
         working-directory: docs/whitelist
         run: python generate_list.py
 
+      - name: Verify output
+        run: |
+          echo "Listing generated files..."
+          ls -l docs/whitelist
+
       - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/whitelist/whitelist.txt
+          git status
           git diff --quiet && echo "No changes to commit" || git commit -m "Update whitelist [skip ci]"
           git push
