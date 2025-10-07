@@ -1,9 +1,10 @@
+import os
 import requests
 import xml.etree.ElementTree as ET
 
 GROUP_URL = "https://steamcommunity.com/groups/joint-command/memberslistxml/?xml=1"
-OUTPUT_FILE = "whitelist.txt"
-PREFIX = "[(JCom)]"  # Change this if your group tag changes
+PREFIX = "[(JCom)]"
+OUTPUT_FILE = os.path.join(os.path.dirname(__file__), "whitelist.txt")
 
 def fetch_group_members():
     print("Fetching group member list...")
@@ -23,15 +24,23 @@ def fetch_steam_name(steamid):
 
 def generate_whitelist():
     steam_ids = fetch_group_members()
-    lines = []
+    entries = []
+
+    # Build list of tuples: (steam_name, steam_id)
     for sid in steam_ids:
         name = fetch_steam_name(sid)
-        formatted = f"Admin={sid}:Whitelist // {PREFIX} {name}"
-        lines.append(formatted)
-        print(formatted)
+        entries.append((name, sid))
 
+    # Sort alphabetically by player name
+    entries.sort(key=lambda x: x[0].lower())
+
+    # Format for whitelist
+    lines = [f"Admin={sid}:Whitelist // {PREFIX} {name}" for name, sid in entries]
+
+    # Write to file
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
+
     print(f"\n✅ {len(lines)} entries written to {OUTPUT_FILE}")
 
 if __name__ == "__main__":
