@@ -1,0 +1,45 @@
+name: Update Whitelist (Debug)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run whitelist generator (debug)
+        working-directory: docs/whitelist
+        run: |
+          echo "Running Python script..."
+          python generate_list.py || echo "⚠️ Python script exited with error $?"
+          echo "--- Directory contents after run ---"
+          ls -l docs/whitelist || echo "⚠️ Could not list directory"
+          echo "--- File preview ---"
+          head -n 10 docs/whitelist/whitelist.txt || echo "⚠️ whitelist.txt not found"
+
+      - name: Commit and push changes (debug)
+        run: |
+          echo "--- Git status before commit ---"
+          git status
+          echo "--- Git diff ---"
+          git diff docs/whitelist/whitelist.txt || echo "⚠️ No diff found"
+          echo "--- Commit and push ---"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/whitelist/whitelist.txt || echo "⚠️ Could not stage file"
+          git commit -m "Update whitelist [skip ci]" || echo "⚠️ Nothing to commit"
+          git push || echo "⚠️ Push failed"
