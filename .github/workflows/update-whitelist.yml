@@ -21,6 +21,7 @@ jobs:
         run: pip install requests
 
       - name: Run script
+        working-directory: docs/whitelist
         run: python generate_list.py
 
       - name: Commit and push
