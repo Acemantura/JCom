@@ -1,11 +1,9 @@
-import os
 import requests
 import xml.etree.ElementTree as ET
 
 GROUP_URL = "https://steamcommunity.com/groups/joint-command/memberslistxml/?xml=1"
-PREFIX = "[(JCom)]"
-# Automatically write to the same directory as this script
-OUTPUT_FILE = os.path.join(os.path.dirname(__file__), "whitelist.txt")
+OUTPUT_FILE = "whitelist.txt"
+PREFIX = "[(JCom)]"  # Change this if your group tag changes
 
 def fetch_group_members():
     print("Fetching group member list...")
