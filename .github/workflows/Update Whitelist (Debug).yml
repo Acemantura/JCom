@@ -22,24 +22,26 @@ jobs:
         run: pip install requests
 
       - name: Run whitelist generator (debug)
-        working-directory: docs/whitelist
+        working-directory: ./docs/whitelist
         run: |
-          echo "Running Python script..."
-          python generate_list.py || echo "⚠️ Python script exited with error $?"
+          python3 generate_list.py
           echo "--- Directory contents after run ---"
-          ls -l docs/whitelist || echo "⚠️ Could not list directory"
+          ls -la .
           echo "--- File preview ---"
-          head -n 10 docs/whitelist/whitelist.txt || echo "⚠️ whitelist.txt not found"
+          head -n 10 whitelist.txt || echo "⚠️ whitelist.txt not found"
+
 
       - name: Commit and push changes (debug)
+        working-directory: ./docs/whitelist
         run: |
           echo "--- Git status before commit ---"
           git status
           echo "--- Git diff ---"
-          git diff docs/whitelist/whitelist.txt || echo "⚠️ No diff found"
+          git diff whitelist.txt || echo "⚠️ No diff found"
           echo "--- Commit and push ---"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/whitelist/whitelist.txt || echo "⚠️ Could not stage file"
+          git add whitelist.txt || echo "⚠️ Could not stage file"
           git commit -m "Update whitelist [skip ci]" || echo "⚠️ Nothing to commit"
           git push || echo "⚠️ Push failed"
+
