@@ -1,2 +1,2 @@
-Admin=76561199038446104:Whitelist // [(JCom)] limongrab
-Admin=76561199007087864:Whitelist // [(JCom)] kittymaru
+76561199038446104 // limongrab
+76561199007087864 // kittymaru
