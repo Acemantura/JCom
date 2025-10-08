@@ -1,7 +1,5 @@
 Admin=76561198877595471:Whitelist // [(JCom)] -=(JCom)Daydreams999=-
 Admin=76561198163230791:Whitelist // [(JCom)] -jam-
-Admin=Admin=76561199007087864:Whitelist:Whitelist // [(JCom)] [(JCom)] kittymaru
-Admin=Admin=76561199038446104:Whitelist:Whitelist // [(JCom)] [(JCom)] limongrab
 Admin=76561197997711497:Whitelist // [(JCom)] Acemantura
 Admin=76561198013904448:Whitelist // [(JCom)] ADDRAC
 Admin=76561199752159580:Whitelist // [(JCom)] AQUA
@@ -19,6 +17,8 @@ Admin=76561198086924658:Whitelist // [(JCom)] DragonofTheWest1
 Admin=76561198162733621:Whitelist // [(JCom)] FLUFFY_BUNNY
 Admin=76561198813552695:Whitelist // [(JCom)] IIBudweiserII
 Admin=76561198254096266:Whitelist // [(JCom)] Jokapoof
+Admin=76561199007087864:Whitelist // [(JCom)] kittymaru
+Admin=76561199038446104:Whitelist // [(JCom)] limongrab
 Admin=76561198984464700:Whitelist // [(JCom)] Malcom_Craig
 Admin=76561198390361495:Whitelist // [(JCom)] Mattcha
 Admin=76561198126034255:Whitelist // [(JCom)] MSgt Frank Woods
