@@ -1,5 +1,7 @@
 Admin=76561198877595471:Whitelist // [(JCom)] -=(JCom)Daydreams999=-
 Admin=76561198163230791:Whitelist // [(JCom)] -jam-
+Admin=Admin=76561199007087864:Whitelist:Whitelist // [(JCom)] [(JCom)] kittymaru
+Admin=Admin=76561199038446104:Whitelist:Whitelist // [(JCom)] [(JCom)] limongrab
 Admin=76561197997711497:Whitelist // [(JCom)] Acemantura
 Admin=76561198013904448:Whitelist // [(JCom)] ADDRAC
 Admin=76561199752159580:Whitelist // [(JCom)] AQUA
