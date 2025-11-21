@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 
 # Constants
 GROUP_URL = "https://steamcommunity.com/groups/joint-command/memberslistxml/?xml=1"
-PREFIX = "[(JCom)]"
+PREFIX = "[[ROM]]"
 
 # Always resolve absolute paths correctly, even when run from GitHub Actions
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -42,7 +42,7 @@ def parse_removal_line(line):
     """
     Parse a non-comment removal line. Returns (steamid, raw_name_or_none).
     Accepts:
-      - Admin=765...:Whitelist // [(JCom)] NAME
+      - Admin=765...:Whitelist // [[ROM]] NAME
       - Admin=765...:Whitelist // NAME
       - 7656119... (raw steamid)
       - 7656119... // NAME
@@ -77,7 +77,7 @@ def parse_removal_line(line):
     return None, None
 
 def make_canonical_removal_line(steamid, display_name):
-    """Return Admin=...:Whitelist // [(JCom)] DisplayName"""
+    """Return Admin=...:Whitelist // [ROM] DisplayName"""
     # ensure prefix exists in the formatted line (consistent with whitelist)
     name_with_prefix = f"{PREFIX} {display_name}" if not display_name.startswith(PREFIX) else display_name
     return f"Admin={steamid}:Whitelist // {name_with_prefix}"
