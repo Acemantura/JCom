@@ -3,7 +3,7 @@ import requests
 import xml.etree.ElementTree as ET
 
 # Constants
-GROUP_URL = "https://steamcommunity.com/groups/joint-command/memberslistxml/?xml=1"
+GROUP_URL = "https://steamcommunity.com/groups/RallyOnMe/memberslistxml/?xml=1"
 PREFIX = "[[ROM]]"
 
 # Always resolve absolute paths correctly, even when run from GitHub Actions
